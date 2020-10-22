@@ -23,8 +23,13 @@ class Api::V1::VehiclesController < ApplicationController
         @vehicle.destroy
         render json: @vehicle
     end
+    # PUT /api/v1/vehicles/1
+    def update
+        @vehicle = Veiculo.find(params[:id])
+        @vehicle.update(vehicle_params)
+        render json: @vehicle
+    end
 end
-
     private
         
         def vehicle_params
