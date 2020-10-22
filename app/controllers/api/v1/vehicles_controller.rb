@@ -14,8 +14,11 @@ class Api::V1::VehiclesController < ApplicationController
     # POST /api/v1/vehicles
     def create
        @vehicle = Veiculo.create(vehicle_params)
-        render json:  @vehicle
-        #Refatorar essa parte
+        if @vehicle
+            render json:  @vehicle
+        else
+            render json:  @vehicle
+        end
     end
     # DELETE /api/v1/vehicles/1
     def destroy
@@ -26,8 +29,11 @@ class Api::V1::VehiclesController < ApplicationController
     # PUT /api/v1/vehicles/1
     def update
         @vehicle = Veiculo.find(params[:id])
-        @vehicle.update(vehicle_params)
-        render json: @vehicle
+        if @vehicle.update(vehicle_params)
+            render json: @vehicle
+        else
+            render "Algo está errado"
+        end
     end
 end
     private
