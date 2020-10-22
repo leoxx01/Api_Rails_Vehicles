@@ -1,5 +1,4 @@
 class Api::V1::VehiclesController < ApplicationController
-    before_action :set_vehicle, only: [:update, :destroy]
     # GET /api/v1/vehicles
     def index
         @vehicles = Veiculo.all
@@ -16,22 +15,20 @@ class Api::V1::VehiclesController < ApplicationController
     def create
        @vehicle = Veiculo.create(vehicle_params)
         render json:  @vehicle
-       if @vehicle.save
-           render json:  @vehicle
-       else
-         render json: @vehicle.errors, status: :unprocessable_entity
-       end
-     end
+        #Refatorar essa parte
+    end
+    # DELETE /api/v1/vehicles/1
+    def destroy
+        @vehicle = Veiculo.find(params[:id])
+        @vehicle.destroy
+        render json: @vehicle
+    end
 end
 
     private
-
-        def set_vehicle
-            @vehicle = Veiculo.find(params[:id])
-        end
         
         def vehicle_params
             params.require(:vehicle).permit(:marca, :veiculo, :ano, :description, :vendido)
         end
     
-end
+
