@@ -5,20 +5,23 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7.0
 
-* System dependencies
+* Rails version 6.0.3
 
-* Configuration
+* DataBase sqlite3
 
-* Database creation
+* 
 
-* Database initialization
+* Exemplo de json de criação(post) e atualização(put)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+*{
+	"veiculo":{
+			"marca": "Pegout",
+			"veiculo": "hat",
+			"ano": 2005,
+			"description":"Teste",
+			"vendido": false
+		}
+}
 * ...
