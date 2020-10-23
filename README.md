@@ -13,9 +13,10 @@ Things you may want to cover:
 
 * 
 
-* Exemplo de json de criação(post) e atualização(put)
+* Exemplo de json de criação(POST) e atualização(PUT)
 
-*{
+
+* {
 	"veiculo":{
 			"marca": "Pegout",
 			"veiculo": "hat",
@@ -24,4 +25,3 @@ Things you may want to cover:
 			"vendido": false
 		}
 }
-* ...
