@@ -15,7 +15,7 @@ Things you may want to cover:
 ## Exemplo de json que tem que ser passado para criação(POST) e atualização(PUT)
 
 
-**{
+** {
 	"veiculo":{
 			"marca": "Pegout",
 			"veiculo": "hat",
